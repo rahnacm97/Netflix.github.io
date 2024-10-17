@@ -1,0 +1,307 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0; /* Sticks to the top */
+    left: 0; /* Aligns to the left */
+    right: 0; /* Aligns to the right */
+    background-color: #141414; /* Initial transparent background */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: white;
+    font-size: 16px; /* Set a base font size */
+}
+
+a {
+    color: white; /* Changed to white for visibility */
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Center items vertically */
+    padding: 15px 20px; /* Padding for navbar */
+    background-color: transparent; /* Removed hard background */
+}
+
+.logo img {
+    width: 75px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav ul {
+    display: flex; /* Flexbox for horizontal list */
+    gap: 20px; /* Space between items */
+}
+
+nav a {
+    color: white; /* White text for nav links */
+    text-decoration: none; /* Remove underline */
+}
+
+.profile {
+    display: flex; 
+    gap: 15px; 
+}
+
+.icon {
+    width: 25px; 
+    height: 25px;
+}
+
+/* Profile Dropdown */
+.profile .dropdown {
+    position: relative; /* Required for dropdown positioning */
+}
+
+.profile .dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the icon */
+    right: 0; /* Align dropdown to the right */
+    background-color: #080707;
+    font-size: 12px;
+    padding: 10px;
+    list-style: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure it stays on top */
+    width: 200px;
+}
+
+.profile .dropdown-content li {
+    padding: 8px 10px;
+}
+
+.profile .dropdown-content li a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.profile .dropdown-content li img.dropdown-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.profile .dropdown-content li a:hover {
+    background-color: #040404;
+}
+
+.profile .dropdown-content li:last-child {
+    border-top: 0.5px solid #fefdfd; /* Thin separator */
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center; /* Center the text */
+}
+
+/* Show dropdown on hover */
+.profile .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li a {
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: gray; /* Change on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative; /* Position relative for absolute positioning of the button */
+    background-image: url('images/khel.webp'); /* Use the background image directly */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background image covers the entire section */
+    height: 600px; /* Set the height of the hero section */
+    display: flex;
+    justify-content: flex-start; /* Align content to the start (left) */
+    align-items: flex-end; /* Align items to the bottom */
+    padding: 20px; /* Add padding to create space */
+    margin-top: 70px; /* To push down content below fixed header */
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    width: 50px; /* Set width of the image */
+    height: 50px; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.top10-text {
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    color: white; /* Use your defined text color */
+    font-size: 22px; /* Adjust font size as needed */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional shadow for readability */
+    margin: 10px 0; /* Margin for spacing */
+    left: 6%;
+}
+
+.hero-text {
+    position: absolute;
+    top: 60%;
+    color: white; /* Text color */
+    font-size: 16px; /* Font size for the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow for better readability */
+    margin-bottom: 10px; /* Space below the text */
+}
+
+.btn {
+    position: absolute;
+    top: 75%;
+    display: inline-flex; /* Use inline-flex for alignment */
+    align-items: center; /* Center items vertically */
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for scale */
+}
+
+.button-icon {
+    width: 20px; /* Set the width of the icon */
+    height: 20px; /* Set the height of the icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.btn:hover {
+    background-color: gray;
+}
+
+/* Movie Grid Styles */
+h2{
+    margin: 20px;
+    font-size: 20px;
+}
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    margin: 20px;
+    position: relative; /* For absolute positioning of the arrow */
+}
+
+.movie-item {
+    position: relative; /* Important to allow absolute positioning within */
+}
+
+.movie-item img {
+    width: 100%;
+    border-radius: 5px; /* Added rounded corners */
+}
+
+.movie-item img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+.arrow-right {
+    position: absolute;
+    left: 40px;
+    top: 40%; /* Vertically center the arrow */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    cursor: pointer; /* Add a pointer to show it's clickable */
+    opacity: 0.1;
+    z-index: 1000;
+    width: auto; /* Set the width of the icon */
+    height: 50px; /* Set the height of the icon */
+    margin-right: 10px; /* Space between icon and text */
+    
+}
+
+.arrow-right:hover {
+    opacity: 1; /* Add hover effect to the arrow */
+}
+
+.footer-container {
+    background-color: #141414; /* Footer background color */
+    padding: 20px;
+    color: gray; /* Footer text color */
+    text-align: left; /* Align text to the left */
+    font-size: small;
+}
+.social-icons {
+    margin: 10px 100px;
+    display: flex; /* Use flexbox for social icons */
+    gap: 5px; /* Space between icons */
+}
+
+.social-icons img {
+    margin: 5px;
+    width: 30px; /* Icon size */
+    height: 30px; /* Maintain aspect ratio */
+}
+
+.footer-table {
+    margin: 10px 100px;
+    width: 80%; /* Full width */
+    border-collapse: collapse; /* Remove gaps between cells */
+}
+
+.footer-table td {
+    vertical-align: top; /* Align content to the top */
+    padding: 15px; /* Space inside table cells */
+}
+
+.footer-table ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-table ul li {
+    margin-bottom: 15px; /* Space between list items */
+}
+
+.footer-table ul li a {
+    color: gray; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: small;
+}
+
+.footer-table ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-btn {
+    padding: 10px 20px; /* Space inside the button */
+    background-color: #141414; /* Button background color */
+    color: gray; /* Button text color */
+    border: 1px solid gray; /* Remove border *//* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: small; /* Font size */
+}
+
+.footer-btn:hover {
+    color: white; /* Button color on hover */
+}
+
+.footer-table p {
+    margin-top: 10px; /* Space above copyright text */
+}
+
+
+
